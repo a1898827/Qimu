@@ -1,12 +1,24 @@
 #include <iostream>
- extern double array_mean(int array[], int n);
-int main() {
-   
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+#include <vector>
+extern int is_identity(int array[10][10]);
 
-    int result = array_mean(arr, n);
-    std::cout << "Average of array elements: " << result << std::endl; 
+int main() {
+    
+    int matrix[10][10] = {
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+    };
+
+    int result = is_identity(matrix) ? 1 : 0;
+    std::cout << "Result: " << result << std::endl; 
 
     return 0;
 }

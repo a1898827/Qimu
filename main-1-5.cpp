@@ -1,11 +1,21 @@
 #include <iostream>
-extern int count_evens(int number);
+#include <vector>
+extern void print_summed(int array1[3][3],int array2[3][3]);
+
 int main() {
-    int number1 = 10;
-    std::cout << "Number of even numbers between 1 and " << number1 << ": " << count_evens(number1) << std::endl;
-    int number2 = 5;
-    std::cout << "Number of even numbers between 1 and " << number2 << ": " << count_evens(number2) << std::endl;
-    int number3 = 0;
-    std::cout << "Number of even numbers between 1 and " << number3 << ": " << count_evens(number3) << std::endl;
+    int matrix1[3][3]= {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int matrix2[3][3] = {
+        {9, 8, 7},
+        {6, 5, 4},
+        {3, 2, 1}
+    };
+
+   print_summed(matrix1,matrix2);
+
     return 0;
 }

@@ -1,15 +1,9 @@
-#include<iostream>
-
-extern int array_sum(int array[], int n){
-
-    if (n < 1) {
-        return 0;
+int sum_diagonal(int array[4][4]) {
+    int diagonalSum = 0;
+  
+    for (int i = 0; i < 4; ++i) {
+        diagonalSum += array[i][i];
     }
 
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += array[i];
-    }
-
-    return sum;
+    return diagonalSum;
 }

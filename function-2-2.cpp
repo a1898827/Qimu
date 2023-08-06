@@ -1,12 +1,16 @@
-int max_element(int array[], int n) {
-    if (n < 1) {
-        return 0;
-    }
-    int max_val = array[0];
-    for (int i = 1; i < n; i++) {
-        if (array[i] > max_val) {
-            max_val = array[i];
+int binary_to_int(int binary_digits[], int number_of_digits){
+    int result = 0;
+
+    for (int i = 0; i < number_of_digits; i++)
+    {
+        if (binary_digits[i] != 1 && binary_digits[i] != 0) {
+            return 0;
         }
     }
-    return max_val;
+    
+    for (int i = 0; i < number_of_digits; i++)
+    {
+        result = (result << 1) + binary_digits[i];
+    }
+    return result;
 }

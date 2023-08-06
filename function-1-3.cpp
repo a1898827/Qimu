@@ -1,12 +1,19 @@
-int  num_count(int array[], int n, int number){
-    if (n < 1) {
-        return 0;
-    }
-    int count = 0;
-    for (int i = 0; i < n; i++) {
-        if (array[i] == number) {
-            count++;
+#include <iostream>
+
+ void count_digits(int array[4][4]) {
+    int counts[10] = {0};
+
+   for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            int digit = array[i][j];
+            if (digit >= 0 && digit <= 9) {
+                counts[digit]++;
+            }
         }
     }
-    return count;
+    
+    for (int i = 0; i < 10; ++i) {
+        std::cout << i << ":" << counts[i] << ";";
+    }
+    std::cout << std::endl;
 }

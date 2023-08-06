@@ -1,10 +1,11 @@
 #include <iostream>
-extern int max_element(int array[], int n);
-int main() {
-    extern int max_element(int [], int );
-    int array[] = {3, 1, 5, 2, 4};
-    int n = sizeof(array) / sizeof(array[0]);
-    int max_num = max_element(array, n);
-    std::cout << "Maximum number: " << max_num << std::endl; 
+extern int binary_to_int(int binary_digits[], int number_of_digits);
+
+int main(){
+int binary_digits[] = {1, 1, 0, 1}; 
+    int number_of_digits = sizeof(binary_digits) / sizeof(binary_digits[0]);
+    int decimal_value = binary_to_int(binary_digits, number_of_digits);
+    std::cout << "Decimal value: " << decimal_value << std::endl;
+
     return 0;
 }

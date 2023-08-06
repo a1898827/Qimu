@@ -1,10 +1,16 @@
 #include <iostream>
-extern int  num_count(int array[], int n, int );
+#include <vector>
+extern void count_digits(int array[4][4]);
 int main() {
-    int array[] = {1, 2, 3, 2, 4, 2, 5};
-    int n = sizeof(array) / sizeof(array[0]);
-    int target = 2;
-    int result = num_count(array, n, target);
-    std::cout << "Number of elements equal to " << target << ": " << result << std::endl; 
+    
+    int matrix[4][4] = {
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12},
+        {13,14,15,16}
+    };
+
+    count_digits(matrix);
+
     return 0;
 }
