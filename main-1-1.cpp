@@ -1,15 +1,30 @@
-#include<iostream>
+#include <iostream>
+#include "player.h"
+#include "wizard.h"
+#include "warrior.h"
 
-int array_sum(int array[], int n);
+using namespace std;
 
 int main() {
-    const int SIZE = 5;
-    int myArray[SIZE] = {1, 2, 3, 4, 5};
-
-    int sum = array_sum(myArray, SIZE);
-
-    std::cout << "Sum of elements in the array: " << sum << std::endl;
-
+    //Wizard(name, health, damage, mana)
+    Wizard wizard("Gandalf", 100, 20, 50);
+    //Warrior(name, health, damage, weapon)
+    Warrior warrior("Aragorn", 120, 25, "Sword");
+    
+    cout << "Let the battle begin!" << endl;
+    
+    while (wizard.getHealth() > 0 && warrior.getHealth() > 0) {
+        wizard.castSpell(&warrior);
+        if (warrior.getHealth() > 0) {
+            warrior.swingWeapon(&wizard);
+        }
+    }
+    
+    if (wizard.getHealth() > 0) {
+        cout << wizard.getName() << " wins!" << endl;
+    } else {
+        cout << warrior.getName() << " wins!" << endl;
+    }
+    
     return 0;
-
 }
